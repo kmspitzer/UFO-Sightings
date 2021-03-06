@@ -7,7 +7,7 @@ var tbody = d3.select("tbody");
 // YOUR CODE HERE!
 tableData.forEach((ufoSighting) => {
     var row = tbody.append("tr");
-    Object.entries(ufoSighting).forEach(value => {    
+    Object.values(ufoSighting).forEach(value => {    
       var cell = row.append("td");
       cell.text(value);
     });
@@ -43,7 +43,7 @@ function runEnter() {
 
   filteredData.forEach((ufoSighting) => {
     var row = tbody.append("tr");
-    Object.entries(ufoSighting).forEach(value => {    
+    Object.values(ufoSighting).forEach(value => {    
       var cell = row.append("td");
       cell.text(value);
     });
