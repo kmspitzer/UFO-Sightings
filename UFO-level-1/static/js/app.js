@@ -37,16 +37,32 @@ function runEnter() {
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
 
-  var filteredData = tableData.filter(sighting => sighting.datetime === inputValue);
+  if (inputValue === "") {
+    var filteredData = tableData;
+  }
+  else {
+    var filteredData = tableData.filter(sighting => sighting.datetime === inputValue);
+  }
+
+
 
   tbody.html("");
 
-  filteredData.forEach((ufoSighting) => {
-    var row = tbody.append("tr");
-    Object.values(ufoSighting).forEach(value => {    
+  if (filteredData.length === 0) {
+      var row = tbody.append("tr");
       var cell = row.append("td");
-      cell.text(value);
-    });
-  });
+      var td = d3.select("td");
 
+      td.attr("colspan", "7");
+      cell.text(`No sightings found for ${inputValue}.`)
+  }
+  else {
+    filteredData.forEach((ufoSighting) => {
+        var row = tbody.append("tr");
+        Object.values(ufoSighting).forEach(value => {    
+            var cell = row.append("td");
+            cell.text(value);
+        });
+     });
+  }
 }
