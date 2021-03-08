@@ -53,7 +53,8 @@ function runEnter() {
       var td = d3.select("td");
 
       td.attr("colspan", "7");
-      cell.text(`No matches found in UFO Sightings data.`)
+      td.attr("class", "no-data-found");
+      cell.text("No sightings found.");
   }
   else {
     filteredData.forEach((ufoSighting) => {
