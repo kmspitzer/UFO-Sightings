@@ -40,7 +40,7 @@ function runEnter() {
     var inputValue = inputElement.property("value");
 
     if (inputValue != "") {
-      filteredData = filteredData.filter(sighting => sighting[idList[i]] === inputValue);
+      filteredData = filteredData.filter(sighting => sighting[idList[i]].toLowerCase() === inputValue.toLowerCase());
       inputElement.property("value", "");
     }
   }

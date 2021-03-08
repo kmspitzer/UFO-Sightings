@@ -23,7 +23,7 @@ var form = d3.select("#form");
 
 // Create event handlers for clicking the button or pressing the enter key
 button.on("click", runEnter);
-form.on("submit",runEnter);
+form.on("submit", runEnter);
 
 // Create the function to run for both events
 function runEnter() {
@@ -37,12 +37,6 @@ function runEnter() {
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
 
-  //if (inputValue === "") {
-  //  var filteredData = tableData;
-  //}
- // else {
- //   var filteredData = tableData.filter(sighting => sighting.datetime.match(inputValue));
-  //}
 
   if (inputValue === "") {
     var filteredData = tableData;
