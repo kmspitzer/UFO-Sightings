@@ -117,6 +117,9 @@ select {
   animation-delay: 1.2s;
 }
 
+.no-data-found {
+  text-align: center;
+}
 
 /* input placeholder color changes */
 .form-control::-webkit-input-placeholder {
