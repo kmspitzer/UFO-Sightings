@@ -11,14 +11,11 @@ tableData.forEach((ufoSighting) => {
       var cell = row.append("td");
       cell.text(value);
     });
-  });
+});
 
 
   // Getting a reference to the button on the page with the id property set to `click-me`
 var button = d3.select("#filter-btn");
-
-// Getting a reference to the input element on the page with the id property set to 'input-field'
-var form = d3.select("#form");
 
 
 // Create event handlers for clicking the button
@@ -27,74 +24,26 @@ button.on("click", runEnter);
 // Create the function to run for both events
 function runEnter() {
 
+
   // Prevent the page from refreshing
   d3.event.preventDefault();
 
-  // Select the input element and get the raw HTML node
-  var inputDate = d3.select("#datetime");
+  var filteredData = tableData;
 
-  // Get the value property of the input element
-  var dateValue = inputDate.property("value");
+  var idList = ["datetime", "city", "state", "country", "shape"];
 
-  if (dateValue === "") {
-    dateValue = "/*/";
+  for (var i = 0; i < idList.length; i++) {
+    // Select the input element and get the raw HTML node
+    var inputElement = d3.select("#" + idList[i]);
+
+    // Get the value property of the input element
+    var inputValue = inputElement.property("value");
+
+    if (inputValue != "") {
+      filteredData = filteredData.filter(sighting => sighting[idList[i]] === inputValue);
+      inputElement.property("value", "");
+    }
   }
-
-  // Select the input element and get the raw HTML node
-  var inputCity = d3.select("#city");
-
-  // Get the value property of the input element
-  var cityValue = inputCity.property("value");
-
-  
-  if (cityValue === "") {
-    cityValue = "/*/";
-  }
-
-
-  // Select the input element and get the raw HTML node
-  var inputState = d3.select("#state");
-
-  // Get the value property of the input element
-  var stateValue = inputState.property("value");
-
-  
-  if (stateValue === "") {
-    stateValue = "/*/";
-  }
-
-
-  // Select the input element and get the raw HTML node
-  var inputCountry = d3.select("#country");
-
-  // Get the value property of the input element
-  var countryValue = inputCountry.property("value");
-
-  
-  if (countryValue === "") {
-    countryValue = "/*/";
-  }
-
-
-  // Select the input element and get the raw HTML node
-  var inputShape = d3.select("#shape");
-
-  // Get the value property of the input element
-  var shapeValue = inputShape.property("value");
-
-  
-  if (shapeValue === "") {
-    shapeValue = "/*/";
-  }
-
-  var filteredData = tableData.filter(sighting => sighting.datetime.match(dateValue) &&
-                                                    sighting.city.match(cityValue) &&
-                                                    sighting.state.match(stateValue) &&
-                                                    sighting.country.match(countryValue) &&
-                                                    sighting.shape.match(shapeValue));
-
-
-
 
   tbody.html("");
 
@@ -115,9 +64,5 @@ function runEnter() {
         });
      });
   }
-  inputDate.property("value", "");
-  inputCity.property("value", "");
-  inputState.property("value", "");
-  inputCountry.property("value", "");
-  inputShape.property("value", "");
+
 }
