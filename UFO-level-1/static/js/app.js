@@ -45,11 +45,12 @@ function runEnter() {
   //}
 
   if (inputValue === "") {
-    var inputValue = "/*/";
+    var filteredData = tableData;
   } 
+  else {
 
-  var filteredData = tableData.filter(sighting => sighting.datetime.match(inputValue));
- 
+    var filteredData = tableData.filter(sighting => sighting.datetime.match(inputValue));
+  }
 
 
 
