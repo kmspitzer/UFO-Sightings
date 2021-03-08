@@ -87,7 +87,7 @@ function runEnter() {
     shapeValue = "/*/";
   }
 
-    var filteredData = tableData.filter(sighting => sighting.datetime.match(dateValue) &&
+  var filteredData = tableData.filter(sighting => sighting.datetime.match(dateValue) &&
                                                     sighting.city.match(cityValue) &&
                                                     sighting.state.match(stateValue) &&
                                                     sighting.country.match(countryValue) &&
@@ -104,7 +104,7 @@ function runEnter() {
       var td = d3.select("td");
 
       td.attr("colspan", "7");
-      cell.text(`No sightings found for ${inputValue}.`)
+      cell.text(`No matches found in UFO Sightings data.`)
   }
   else {
     filteredData.forEach((ufoSighting) => {
