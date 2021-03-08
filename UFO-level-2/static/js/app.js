@@ -36,11 +36,21 @@ function runEnter() {
   // Get the value property of the input element
   var dateValue = inputDate.property("value");
 
+  if (dateValue === "") {
+    dateValue = "/*/";
+  }
+
   // Select the input element and get the raw HTML node
   var inputCity = d3.select("#city");
 
   // Get the value property of the input element
   var cityValue = inputCity.property("value");
+
+  
+  if (cityValue === "") {
+    cityValue = "/*/";
+  }
+
 
   // Select the input element and get the raw HTML node
   var inputState = d3.select("#state");
@@ -48,25 +58,41 @@ function runEnter() {
   // Get the value property of the input element
   var stateValue = inputState.property("value");
 
+  
+  if (stateValue === "") {
+    stateValue = "/*/";
+  }
+
+
   // Select the input element and get the raw HTML node
   var inputCountry = d3.select("#country");
 
   // Get the value property of the input element
   var countryValue = inputCountry.property("value");
 
-    // Select the input element and get the raw HTML node
-    var inputShape = d3.select("#shape");
-
-    // Get the value property of the input element
-    var shapeValue = inputShape.property("value");
-
-
-  if (inputValue === "") {
-    var filteredData = tableData;
+  
+  if (countryValue === "") {
+    countryValue = "/*/";
   }
-  else {
-    var filteredData = tableData.filter(sighting => sighting.datetime === inputValue);
+
+
+  // Select the input element and get the raw HTML node
+  var inputShape = d3.select("#shape");
+
+  // Get the value property of the input element
+  var shapeValue = inputShape.property("value");
+
+  
+  if (shapeValue === "") {
+    shapeValue = "/*/";
   }
+
+    var filteredData = tableData.filter(sighting => sighting.datetime.match(dateValue) &&
+                                                    sighting.city.match(cityValue) &&
+                                                    sighting.state.match(stateValue) &&
+                                                    sighting.country.match(countryValue) &&
+                                                    sighting.shape.match(shapeValue));
+
 
 
 
@@ -89,5 +115,9 @@ function runEnter() {
         });
      });
   }
-  inputElement.property("value", "");
+  inputDate.property("value", "");
+  inputCity.property("value", "");
+  inputState.property("value", "");
+  inputCountry.property("value", "");
+  inputShape.property("value", "");
 }

@@ -37,12 +37,19 @@ function runEnter() {
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
 
+  //if (inputValue === "") {
+  //  var filteredData = tableData;
+  //}
+ // else {
+ //   var filteredData = tableData.filter(sighting => sighting.datetime.match(inputValue));
+  //}
+
   if (inputValue === "") {
-    var filteredData = tableData;
-  }
-  else {
-    var filteredData = tableData.filter(sighting => sighting.datetime === inputValue);
-  }
+    var inputValue = "/*/";
+  } 
+
+  var filteredData = tableData.filter(sighting => sighting.datetime.match(inputValue));
+ 
 
 
 
