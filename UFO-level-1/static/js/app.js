@@ -49,7 +49,7 @@ function runEnter() {
   } 
   else {
 
-    var filteredData = tableData.filter(sighting => sighting.datetime.match(inputValue));
+    var filteredData = tableData.filter(sighting => sighting.datetime === inputValue);
   }
 
 
