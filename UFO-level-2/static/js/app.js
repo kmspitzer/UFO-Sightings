@@ -27,6 +27,11 @@ tableData.forEach((ufoSighting) => {
     });
 });
 
+// initialize our list of input fields
+var idList = Object.keys(tableData[0]);
+
+// set number of input fields
+var numInputs = 5;
 
 // Getting a reference to the button on the page
 //  with the id property set to `filter-btn`
@@ -46,12 +51,8 @@ function runEnter() {
   // start filtering with all data
   var filteredData = tableData;
 
-  // initialize our list of input fields
-  var idList = ["datetime", "city", "state", "country", "shape"];
-
-
   // loop through each input field for filtering
-  for (var i = 0; i < idList.length; i++) {
+  for (var i = 0; i < numInputs; i++) {
 
     // Select the input element and get the raw HTML node
     var inputElement = d3.select("#" + idList[i]);
