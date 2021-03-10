@@ -44,7 +44,6 @@ button.on("click", runEnter);
 // Create the function to run on-click
 function runEnter() {
 
-
   // Prevent the page from refreshing
   d3.event.preventDefault();
 
