@@ -1,7 +1,5 @@
 # javascript-challenge
 
-## Javascript Challenge     10 March 2021
-Kate Spitzer      in collaboration with Rick Spitzer
 
 This functionality uses Javascript and the D3 library to allow filtering of a dataset based on user input.
 The filtered data is then dynamically displayed on a web page.
