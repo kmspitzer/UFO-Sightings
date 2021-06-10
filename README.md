@@ -13,6 +13,9 @@ submit event.  When one of the events is triggered, runEvent() is called to filt
 appropriate data.  If no date is entered in the input field, all data in the dataset will be displayed.  If no data matching the input date is found, a "No sightings found
 for <date>." message is displayed.  Logic is included to prevent the entire page from being redisplayed each time an event is triggered, and each time an event is triggered,
 the input field is cleared, and the table area is cleared before rendering the new table.
+  
+
+To run this page, visit: https://kmspitzer.github.io/javascript-challenge/UFO-level-1/
 
 
 UFO Level 2
@@ -25,3 +28,7 @@ runEvent() is called to filter the dataset by the data entered in the input fiel
 is found, a "No sightings found." message is displayed.  Logic is included to prevent the entire page from being redisplayed each time the event is triggered, and each time
 the event is triggered, the input fields are cleared, and the table area is cleared before rendering the new table.
   
+
+To run this page, visit: https://kmspitzer.github.io/javascript-challenge/UFO-level-2/
+
+
