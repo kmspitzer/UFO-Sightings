@@ -1,4 +1,4 @@
-# javascript-challenge
+# UFO-Sightings
 
 
 This functionality uses Javascript and the D3 library to allow filtering of a dataset based on user input.
@@ -13,7 +13,7 @@ for <date>." message is displayed.  Logic is included to prevent the entire page
 the input field is cleared, and the table area is cleared before rendering the new table.
   
 
-To run this page, visit: https://kmspitzer.github.io/javascript-challenge/UFO-level-1/
+To run this page, visit: https://kmspitzer.github.io/UFO-Sightings/UFO-level-1/
 
 
 UFO Level 2
@@ -27,6 +27,6 @@ is found, a "No sightings found." message is displayed.  Logic is included to pr
 the event is triggered, the input fields are cleared, and the table area is cleared before rendering the new table.
   
 
-To run this page, visit: https://kmspitzer.github.io/javascript-challenge/UFO-level-2/
+To run this page, visit: https://kmspitzer.github.io/UFO-Sightings/UFO-level-2/
 
 
