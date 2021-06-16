@@ -73,6 +73,11 @@ select {
   outline: none;
 }
 
+form {
+  background-color: lightgray;
+  border: 1px;
+}
+
 #table-area th {
   text-align: left;
 }
