@@ -31,4 +31,5 @@ To run this page, visit: https://kmspitzer.github.io/UFO-Sightings/UFO-level-2/
 
 
 ![image](/UFO-level-2/static/images/UFOpage1.png)
+
 ![image](/UFO-level-2/static/images/UFOpage2.png)
